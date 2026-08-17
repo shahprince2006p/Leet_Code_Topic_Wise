@@ -3,7 +3,7 @@ class Solution {
        int l=0;
        int h=arr.length-1;
 
-       while(l<=h){
+       while(l<=34h){
         int mid=l+(h-l)/2;
         int missing=arr[mid]-(mid+1);
 
