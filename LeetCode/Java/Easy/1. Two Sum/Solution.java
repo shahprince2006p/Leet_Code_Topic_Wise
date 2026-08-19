@@ -1,14 +1,14 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int n=nums.length;
-for(int left=1;left<n;left++){
-        for(int right=left;right<n;right++){
-            int sum=nums[right-left]+nums[right];
-            if(sum==target){
-                return new int[]{right-left,right};
+
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(nums[j]==target - nums[i]){
+                    return new int [] {i,j};
+                }
             }
         }
+        return new int[]{-1,-1};
     }
-    return new int[]{};
-}
 }
