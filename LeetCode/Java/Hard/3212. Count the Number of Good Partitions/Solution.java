@@ -1,25 +1,28 @@
 class Solution {
     public int numberOfGoodPartitions(int[] nums) {
 
+        int MOD = 1000000007;
+
         HashMap<Integer, Integer> last = new HashMap<>();
 
-        // last occurance find kar ne ke liye 
+        // find last accourance:
         for(int i = 0; i < nums.length; i++) {
             last.put(nums[i], i);
         }
 
-        int count = 0;
-        int end = 0;
+        long ans = 1;
+        int j = 0;
 
         for(int i = 0; i < nums.length; i++) {
 
-            end = Math.max(end, last.get(nums[i]));
+            j = Math.max(j, last.get(nums[i]));
 
-            if(i == end) {
-                count++;
+            // tukde kar diye
+            if(i == j && i != nums.length - 1) {
+                ans = (ans * 2) % MOD;
             }
         }
 
-        return (int)Math.pow(2, count - 1);
+        return (int)ans;
     }
 }
