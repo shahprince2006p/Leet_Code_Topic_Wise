@@ -9,7 +9,15 @@ class Solution {
         }
 
         int count = 0;
-        int end = 0;
+        int i=0;
+        int j=0;
+
+        while(i<nums.length){
+            if(i>j){
+                count=(count*2)%MOD;
+            }
+            j=max(j)
+        }
 
         // for(int i = 0; i < nums.length; i++) {
 
